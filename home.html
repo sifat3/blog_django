@@ -1,0 +1,15 @@
+<title>Sifat's Blog</title>
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>POSTS</h1>
+<ul>
+{% for post in object_list %}
+    <h3><br><li><a href="{% url 'article' post.pk %}">{{ post.title }}</a></h3>
+    {{ post.author.first_name }} {{ post.author.last_name }}<br/>
+        {{ post.body }}</li>
+{% endfor %}
+
+
+{% endblock %}
+</ul>
